@@ -1,19 +1,34 @@
-# Getting Started with Create React App
+# Goairmart
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Prerequisites
 
-## Available Scripts
+- Please implement the mobile home page in Reactjs or any Reactjs based framework.
 
-In the project directory, you can run:
+- Adjust the layout and optimize the user experience for desktop (screen width >= 1200).
 
-### `npm i`
+- Define and organize reusable components as classes or functions.
+
+## Stack
+
+- Styled Components
+- Reactjs
+- Hooks
+- Moment
+
+## Setup and Run
+
+Clone project
+
+### `git clone https://github.com/gasper94/goairmart.git`
+
+Go to project
+
+### `cd goairmart`
 
 Install all packages needed
 
+### `npm i`
+
+Run app
+
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
