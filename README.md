@@ -1,5 +1,7 @@
 # Goairmart
 
+### `USE CHROME FOR THIS APP`
+
 ## Prerequisites
 
 - Please implement the mobile home page in Reactjs or any Reactjs based framework.
