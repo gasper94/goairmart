@@ -1,24 +1,52 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
 
+// Assests
+
+// Layout
+import {DashboardLayout} from "./layouts/dashboard-layout/index";
+
+// Components
+import { Page } from './pages/homepage';
+
+// API
+import {Objectx} from "./api/menu_data";
+
+// Components
+import NavigationBar from './pages/homepage/Components/NavigationBar';
+import MobileMenu from './pages/homepage/Components/MobileMenu';
+import MainContent from './pages/homepage/Components/MainArea';
+
 function App() {
+
+  const [banner, setBanner] = useState(null);
+  const [groups, setGroups] = useState(null);
+
+  useEffect(() => { 
+    getBanner(Objectx);
+    getGroups(Objectx);
+  }, [])
+
+  const getBanner = (arr) => {
+    const banner = arr.sections.filter(item => item.section_type === "banner");
+    // console.log("banner", banner[0].content);
+    setBanner(banner[0].content)
+  }
+
+  const getGroups = (arr) => {
+    const groups = arr.sections.filter(item => item.section_type === "group");
+    // console.log("Groups", groups[0].content[1]);
+    setGroups(groups[0].content[1])
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Page>
+      <DashboardLayout>
+          <NavigationBar />
+          <MainContent banner={banner} groups={groups}/>
+          <MobileMenu />
+      </DashboardLayout>    
+    </Page>
   );
 }
 
